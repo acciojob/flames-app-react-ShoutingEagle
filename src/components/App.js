@@ -26,22 +26,31 @@ class App extends Component {
         let obj = {};
         let count = 0;
 
-        for(let i=0;i<s1.length;i++){
-            if(obj[s1[i]] == undefined){
-                obj[s1[i]] = 1;
-            }
-            else{
-                obj[s1[i]] ++;
-            }
+        if(s1.length == 0 || s2.length == 0){
+            s3 = -1;
         }
 
-
-        for(let i=0;i<s2.length;i++){
-            if(obj[s2[i]]>0){
-                obj[s2[i]] --;
-                count++;
+        else{
+            
+            for(let i=0;i<s1.length;i++){
+                if(obj[s1[i]] == undefined){
+                    obj[s1[i]] = 1;
+                }
+                else{
+                    obj[s1[i]] ++;
+                }
             }
+
+
+            for(let i=0;i<s2.length;i++){
+                if(obj[s2[i]]>0){
+                    obj[s2[i]] --;
+                    count++;
+                }
+            }
+
         }
+
 
         s3 = (s3 - (2 * count)) % 6;
         switch (s3) {
@@ -75,8 +84,8 @@ class App extends Component {
                 {/* Do not remove the main div */}
                
                
-                <input type="text" value={this.state.firstName} onChange={this.handlefirstName} data-testid="input1"/>
-                <input type="text" value={this.state.secondName} onChange={this.handlesecondName} data-testid="input2"/>
+                <input type="text" value={this.state.firstName} onChange={this.handlefirstName} data-testid="input1" name="name1"/>
+                <input type="text" value={this.state.secondName} onChange={this.handlesecondName} data-testid="input2" name="name2"/>
                 <button onClick={this.handleRelationshipClick} data-testid="calculate_relationship">Calculate Relationship Future</button>
                 <button onClick={this.handleClearClick} data-testid="clear">Clear</button>
                 <h3 data-testid="answer">{this.state.display}</h3>
