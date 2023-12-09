@@ -84,8 +84,8 @@ class App extends Component {
                 {/* Do not remove the main div */}
                
                
-                <input type="text" value={this.state.firstName} onChange={this.handlefirstName} data-testid="input1" name="name1"/>
-                <input type="text" value={this.state.secondName} onChange={this.handlesecondName} data-testid="input2" name="name2"/>
+                <input type="text" value={this.state.firstName} onChange={this.handlefirstName} data-testid="input1" name="name1" placeholder="Enter First Name"/>
+                <input type="text" value={this.state.secondName} onChange={this.handlesecondName} data-testid="input2" name="name2" placeholder="Enter Second Name"/>
                 <button onClick={this.handleRelationshipClick} data-testid="calculate_relationship">Calculate Relationship Future</button>
                 <button onClick={this.handleClearClick} data-testid="clear">Clear</button>
                 <h3 data-testid="answer">{this.state.display}</h3>
