@@ -27,7 +27,7 @@ class App extends Component {
         let count = 0;
 
         if(s1.length == 0 || s2.length == 0){
-            s3 = -1;
+            s3 = undefined;
         }
 
         else{

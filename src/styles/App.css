@@ -10,3 +10,8 @@ button{
     justify-content: center;
     align-items: center;
 }
+
+
+input[name=name1]:focus, input[name=name2]:focus{
+    outline-color: rgb(79, 96, 247);
+}
