@@ -22,12 +22,12 @@ class App extends Component {
     handleRelationshipClick = () => {
         let s1 = this.state.firstName.toLowerCase().trim();
         let s2 = this.state.secondName.toLowerCase().trim();
-        let s3 = s1.length + s2.length;
+        let calculate_relationship = s1.length + s2.length;
         let obj = {};
         let count = 0;
 
         if(s1.length == 0 || s2.length == 0){
-            s3 = undefined;
+            calculate_relationship = undefined;
         }
 
         else{
@@ -52,8 +52,8 @@ class App extends Component {
         }
 
 
-        s3 = (s3 - (2 * count)) % 6;
-        switch (s3) {
+        calculate_relationship = (calculate_relationship - (2 * count)) % 6;
+        switch (calculate_relationship) {
             case 1: this.setState({display : 'Friends'})
             break;
             case 2: this.setState({display : 'Love'})
